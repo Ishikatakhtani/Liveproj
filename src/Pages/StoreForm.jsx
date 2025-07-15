@@ -90,24 +90,24 @@ const [pincode, setPincode] = useState('');
           <label id="shop-address-label">Shop No, Building, Company, Apartment*</label>
       < input type="text" id="shop-address-input" value={address}
   onChange={(e) => setAddress(e.target.value)}
-  placeholder="Enter shop address"
+  placeholder="Enter shop address" required
 />
 
           <label id="area-label">Area, Street, Sector, Village*</label>
           <input type="text" id="area-input" value={area}
   onChange={(e) => setArea(e.target.value)}
-  placeholder="Enter area or street"
+  placeholder="Enter area or street" required
 />
 
           <label id="landmark-label">Landmark (optional)</label>
          <input type="text" id="landmark-input" value={landmark}
   onChange={(e) => setLandmark(e.target.value)}
-  placeholder="Enter landmark"
+  placeholder="Enter landmark" 
 />
 
           <label id="pincode-label">Pincode*</label>
         <input type="text" id="pincode-input" value={pincode} onChange={(e) => setPincode(e.target.value)}
-  placeholder="Enter pincode"
+  placeholder="Enter pincode" required
 />
 
           <button id="next-button" onClick={() => navigate('/product-selection')}>
