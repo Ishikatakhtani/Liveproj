@@ -1,0 +1,235 @@
+/* StoreForm.css - Enhanced & Modern with Image */
+
+:root {
+  --primary-color: #0d6efd;
+  --accent-color: #00c897;
+  --bg-light: #f3f4f6;
+  --bg-white: #ffffff;
+  --gray: #6c757d;
+  --border-radius: 12px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #f8fbff, #e6f4ff);
+  color: #333;
+}
+
+#main-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#left-panel,
+#right-panel {
+  width: 50%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--bg-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
+#right-panel {
+  background: url('https://images.unsplash.com/vector-1745253073481-abe115234f49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8SWY2NUF1Tk9PeFF8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+#left-panel {
+  background: url('https://images.unsplash.com/vector-1745253073481-abe115234f49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8SWY2NUF1Tk9PeFF8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+#left-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  border-radius: 0;
+}
+
+#left-panel * {
+  position: relative;
+  z-index: 1;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+}
+
+#smartbiz-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+#biz-color {
+  color: var(--accent-color);
+}
+
+#nav-links span {
+  margin-left: 25px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+#nav-links span:hover {
+  color: var(--accent-color);
+}
+
+#store-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  animation: fadeIn 0.5s ease-in-out;
+  margin-top: 100px;
+}
+
+#form-title {
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+#form-subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 30px;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 25px;
+  display: block;
+  font-size: 15px;
+  color: #2c2c2c;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: var(--border-radius);
+  margin-top: 8px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.25);
+}
+
+input:read-only {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+#store-available-msg {
+  color: green;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#store-link-note {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 10px;
+}
+
+#location-button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+#location-button:hover {
+  background: #00b184;
+}
+
+#or-separator {
+  text-align: center;
+  font-weight: 700;
+  color: #999;
+  margin: 15px 0;
+}
+
+#next-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 14px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 35px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+#next-button:hover {
+  background-color: #0a58ca;
+}
+
+#chatbox {
+  margin-top: auto;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  align-self: flex-end;
+  margin-top: 60px;
+  box-shadow: var(--box-shadow);
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
