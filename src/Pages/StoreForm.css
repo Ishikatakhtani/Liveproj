@@ -13,12 +13,13 @@
 body {
   margin: 0;
   font-family: var(--font);
-  background: url('https://images.unsplash.com/vector-1745253073481-abe115234f49?w=500&auto=format&fit=crop&q=60') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+
   background-size: cover;
   color: var(--text-dark);
 }
+ 
 
-/* Navbar */
 #navbar {
   background: var(--white);
   padding: 20px 40px;
@@ -90,7 +91,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Labels & Inputs */
+
 label {
   display: block;
   margin-bottom: 6px;
@@ -128,7 +129,7 @@ input:focus {
   margin-top: -10px;
 }
 
-/* ✅ Input + Button stacked vertically */
+
 .input-button-group {
   display: flex;
   flex-direction: column;
@@ -162,14 +163,14 @@ input:focus {
   background: #004dcc;
 }
 
-/* Location dropdowns */
+
 .location-selects {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 
-/* Next Button */
+
 #next-button {
   background: var(--primary);
   color: white;
@@ -187,7 +188,7 @@ input:focus {
   background-color: #004dcc;
 }
 
-/* Product Form Container */
+
 .productform {
   flex: 1;
   display: flex;
@@ -204,7 +205,6 @@ input:focus {
   overflow: auto;
 }
 
-/* Categories */
 #categories {
   display: flex;
   flex-wrap: wrap;
@@ -231,7 +231,6 @@ input:focus {
   color: white;
 }
 
-/* Other category */
 #other-category-input {
   width: 100%;
   padding: 10px 14px;
@@ -241,7 +240,7 @@ input:focus {
   font-size: 14px;
 }
 
-/* Chatbox */
+
 #chatbox {
   margin-top: 30px;
   background: linear-gradient(to right, var(--primary), var(--accent));
@@ -254,7 +253,7 @@ input:focus {
   width: fit-content;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .s1 {
     flex-direction: column;

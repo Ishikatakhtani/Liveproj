@@ -3,10 +3,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import StoreForm from './Pages/StoreForm';
-import ProductSelection from './Pages/ProductSelection';
+
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Layout from './Layout';
+import Home from './Pages/Home';
+import AddProduct from './Pages/AddProduct';
 
 
 function App() {
@@ -18,7 +20,10 @@ function App() {
           <Route index element={<StoreForm />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="product-selection" element={<ProductSelection />} />
+          
+           <Route path="Home" element={<Home />} />
+            <Route path="/add-product" element={<AddProduct />} />
+  
         </Route>
       </Routes>
     </Router>

@@ -37,9 +37,9 @@ function StoreForm() {
       checked ? [...prev, value] : prev.filter((p) => p !== value)
     );
   };
-  // Manual check on button click only
+
   const checkAvailability = () => {
-    const taken = ['localscope', 'amazshop', 'myshop'];
+    const taken = ['localscope', 'myshop'];
     const trimmed = storeName.trim().toLowerCase();
     if (trimmed === '') {
       alert('Please enter a store name first.');
@@ -63,7 +63,7 @@ function StoreForm() {
 
   return (
     <div className="m1">
-      {/* Navbar */}
+   
       <div id="navbar">
         <span id="logo">Local<span id="biz-color">Scope</span></span>
         <div id="nav-links">
@@ -72,7 +72,7 @@ function StoreForm() {
         </div>
       </div>
 
-      {/* Store Name + Location */}
+     
       <div className="s1">
         <div className="left s1left">
           <h1 id="form-title">What should we call your store?</h1>
@@ -229,7 +229,7 @@ function StoreForm() {
             id="next-button"
             onClick={() => {
               if (storeName && address && area && pincode && selected.length > 0) {
-                navigate('/');
+                navigate('/Home', { state: { storeName } });
               } else {
                 alert('Please fill all required fields.');
               }
@@ -242,11 +242,11 @@ function StoreForm() {
       </div>
 
        
-      <div className="smartbiz-container">
+      <div id="details">
   <h2>Tell us more about your business</h2>
   <p className="subtitle">Share more details so we can assist you more effectively!</p>
 
-  <div className="form-full-column">
+  <div id ="details1">
     <div className="form-group">
       <label>1. Do you currently own a business?</label>
       <div className="option-group">
@@ -277,10 +277,15 @@ function StoreForm() {
     </div>
   </div>
 
-  <div className="form-actions">
-    <button className="skip-btn">Skip this step</button>
-    <button className="finish-btn">Finish</button>
-  </div>
+  <div id='skip'>
+   <button id="skip-btn" onClick={() => navigate('/Home', { state: { storeName } })}>
+  Skip this step
+</button>
+
+<button id="finish-btn" onClick={() => navigate('/Home', { state: { storeName } })}>
+  Finish
+</button>
+</div>
 </div>
 
 

@@ -1,4 +1,4 @@
-.smartbiz-container {
+#details{
   margin-top: 40px;
   background-color: var(--white);
   border-radius: var(--radius);
@@ -7,7 +7,7 @@
   font-family: var(--font);
 }
 
-.smartbiz-container h2 {
+#details h2 {
   font-size: 26px;
   font-weight: 700;
   color: var(--text-dark);
@@ -20,8 +20,8 @@
   margin-bottom: 30px;
 }
 
-/* Horizontal layout of 3 form groups side-by-side */
-.form-full-column {
+
+#details1{
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -42,7 +42,7 @@
   margin-bottom: 10px;
 }
 
-/* Radio/Checkbox Options Styling */
+
 .radio-group label,
 .checkbox-group label {
   display: flex;
@@ -71,16 +71,16 @@ input[type="checkbox"] {
   transform: scale(1.1);
 }
 
-/* Bottom Buttons */
-.form-actions {
+
+#skip{
   display: flex;
   justify-content: flex-end;
   gap: 16px;
   margin-top: 40px;
 }
 
-.skip-btn,
-.finish-btn {
+#skip-btn,
+#finish-btn {
   padding: 12px 24px;
   font-size: 15px;
   font-weight: 600;
@@ -90,27 +90,27 @@ input[type="checkbox"] {
   transition: all 0.3s ease;
 }
 
-.skip-btn {
+#skip-btn {
   background-color: #e2e8f0;
   color: #2d3748;
 }
 
-.skip-btn:hover {
+#skip-btn:hover {
   background-color: #cbd5e0;
 }
 
-.finish-btn {
+#finish-btn {
   background-color: var(--primary);
   color: white;
 }
 
-.finish-btn:hover {
+#finish-btn:hover {
   background-color: #004dcc;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .form-full-column {
+  #details1{
     flex-direction: column;
   }
 }
