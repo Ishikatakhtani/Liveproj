@@ -22,9 +22,9 @@ body {
 
 #navbar {
   background: var(--white);
-  padding: 20px 40px;
   box-shadow: var(--shadow);
   display: flex;
+  padding: 20px ;
   justify-content: space-between;
   align-items: center;
   position: sticky;
@@ -34,6 +34,10 @@ body {
 }
 
 #logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
   font-size: 26px;
   font-weight: 700;
 }
@@ -43,6 +47,7 @@ body {
 }
 
 #nav-links span {
+  
   margin-left: 25px;
   font-weight: 600;
   color: var(--primary);
@@ -252,7 +257,13 @@ input:focus {
   box-shadow: var(--shadow);
   width: fit-content;
 }
-
+.stdropdown-input.stsearch-box {
+    justify-content: center;
+    align-items: center;
+}
+.stdropdown-container {
+    height: 45px;
+}
 
 @media (max-width: 768px) {
   .s1 {

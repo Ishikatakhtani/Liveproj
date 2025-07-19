@@ -1,6 +1,11 @@
+#div1{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+#root{ background-image: url('https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg');}
 #details{
   margin-top: 40px;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   border-radius: var(--radius);
   padding: 40px 30px;
   box-shadow: var(--shadow);

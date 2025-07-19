@@ -248,10 +248,11 @@ function StoreForm() {
 
   <div id ="details1">
     <div className="form-group">
-      <label>1. Do you currently own a business?</label>
+      {/* <label>1. Do you currently own a business?</label> */}
       <div className="option-group">
-        <label><input type="radio" name="business" value="yes" onChange={(e) => setBusinessOwned(e.target.value)} />Yes, I'm currently selling online and/or offline</label>
-        <label><input type="radio" name="business" value="no" onChange={(e) => setBusinessOwned(e.target.value)} />No, I don't have a business</label>
+        <label>1. Do you currently own a business?</label>
+       <input type="radio" name="business" value="yes" onChange={(e) => setBusinessOwned(e.target.value)} />Yes, I'm currently selling online and/or offline
+       <input type="radio" name="business" value="no" onChange={(e) => setBusinessOwned(e.target.value)} />No, I don't have a business
       </div>
     </div>
 

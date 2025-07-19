@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import "./Product.css";
 import ProductForm from './ProductForm';
 const AddProduct = () => (
-  <Container className="py-4">
+  <Container id='div1' >
  
  <ProductForm/>
   </Container>
