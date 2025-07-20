@@ -9,6 +9,7 @@ import Register from './Pages/Register';
 import Layout from './Layout';
 import Home from './Pages/Home';
 import AddProduct from './Pages/AddProduct';
+import Payments from './Pages/Paymensts';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           
            <Route path="Home" element={<Home />} />
             <Route path="/add-product" element={<AddProduct />} />
+  <Route path="/payments" element={<Payments />} />
   
         </Route>
       </Routes>

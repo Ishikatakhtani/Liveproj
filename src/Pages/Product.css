@@ -49,7 +49,7 @@ h2 {
   font-size: 16px;
 }
 
-/* Optional: Success Alert */
+
 .alert.success {
   background-color: #e6f9ee;
   color: #1a7f4d;
@@ -60,7 +60,7 @@ h2 {
   content: '✅';
 }
 
-/* Optional: Warning Alert */
+
 .alert.warning {
   background-color: #fff4e5;
   color: #b76e00;
@@ -71,7 +71,7 @@ h2 {
   content: '⚠️';
 }
 
-/* Optional: Error Alert */
+
 .alert.error {
   background-color: #fdecea;
   color: #d93025;
