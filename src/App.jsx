@@ -10,6 +10,7 @@ import Layout from './Layout';
 import Home from './Pages/Home';
 import AddProduct from './Pages/AddProduct';
 import Payments from './Pages/Paymensts';
+import Catlog from './Pages/Catlog';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
            <Route path="Home" element={<Home />} />
             <Route path="/add-product" element={<AddProduct />} />
   <Route path="/payments" element={<Payments />} />
-  
+    <Route path="/catlog" element={<Catlog />} />
         </Route>
       </Routes>
     </Router>

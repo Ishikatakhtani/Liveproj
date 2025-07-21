@@ -7,7 +7,15 @@ function Home() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const storeName = location.state?.storeName || 'Your Store';
+const storeName = location.state?.storeName || localStorage.getItem("storeName") || 'Your Store';
+
+useEffect(() => {
+  if (storeName && storeName !== 'Your Store') {
+    localStorage.setItem("storeName", storeName);
+  }
+}, [storeName]);
+
+  //const storeName = location.state?.storeName || 'Your Store';
 
   const [stepsCompleted, setStepsCompleted] = useState({
     store: false,
@@ -29,15 +37,25 @@ function Home() {
         <div id="logo1">Local<span id='biz-color'>Scope</span></div>
         <nav id="menu">
           <span className="active">Home</span>
-          <span>Catalog</span>
+         <span
+  onClick={() => {
+    console.log("Store being passed:", storeName);
+   navigate('/catalog', { state: { storeName } });
+  }}
+  
+>
+  Catalog
+</span>
+
+    <span 
+      onClick={() => navigate('/add-product', { state: { storeName } })}
+    >Add Products</span>
+    
           <span>Orders</span>
           <span>Analytics</span>
           <span>Reviews</span>
           <hr />
-          {/* <span>Store Configuration</span>
-          <span>Growth</span>
-          <span>Trust Markers</span>
-          <span>Settings</span> */}
+       
         </nav>
       </aside>
 
@@ -105,7 +123,7 @@ function Home() {
                 )}
 
                 {!stepsCompleted.payment && (
-                  <div className="step-row" onClick={() => navigate('/payments')}>
+                  <div className="step-row" onClick={() => navigate('/payments', { state: { storeName } })}>
                     <span>💳 Setup Payments</span>
                     <span className="arrow-icon">➔</span>
                   </div>

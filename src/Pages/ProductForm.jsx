@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Row, Col, Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const ProductForm = () => {
-  
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Get store name from state or localStorage
+  const storeName = location.state?.storeName || localStorage.getItem("storeName") || 'Your Store';
+
+  // Save to localStorage if received from router
+  useEffect(() => {
+    if (location.state?.storeName && location.state.storeName !== 'Your Store') {
+      localStorage.setItem("storeName", location.state.storeName);
+    }
+  }, [location.state]);
+
   const [product, setProduct] = useState({
     name: '',
     category: '',
@@ -14,8 +26,6 @@ const ProductForm = () => {
     quantity: '',
     sku: ''
   });
-const navigate = useNavigate();
-
 
   const [variants, setVariants] = useState([]);
   const [variantName, setVariantName] = useState('');
@@ -29,7 +39,6 @@ const navigate = useNavigate();
     }));
   };
 
-  
   const addVariant = () => {
     if (!variantName || !variantValues) return;
     setVariants([...variants, {
@@ -40,41 +49,50 @@ const navigate = useNavigate();
     setVariantValues('');
   };
 
- const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const newProduct = {
-    ...product,
-    variants
+    // Convert media files to just file names (you could convert to base64 if needed)
+    const mediaFiles = product.media ? Array.from(product.media).map(file => file.name) : [];
+
+    const newProduct = {
+      ...product,
+      media: mediaFiles,
+      variants,
+      storeName // ✅ include storeName for filtering in catalog
+    };
+
+    // Get existing products or empty array
+    const existingProducts = JSON.parse(localStorage.getItem("allProducts")) || [];
+
+    // Push and save
+    existingProducts.push(newProduct);
+    localStorage.setItem("allProducts", JSON.stringify(existingProducts));
+    localStorage.setItem("productsStep", "completed");
+
+    console.log("✅ Product Added:", newProduct);
+    console.log("🗂️ All Products in localStorage:", existingProducts);
+
+    // Redirect to payments page with storeName
+    navigate('/payments', { state: { storeName } });
+
+    // Reset form
+    setProduct({
+      name: '',
+      category: '',
+      price: '',
+      discountedPrice: '',
+      description: '',
+      media: null,
+      quantity: '',
+      sku: ''
+    });
+    setVariants([]);
+    setVariantName('');
+    setVariantValues('');
   };
 
-  localStorage.setItem('addedProduct', JSON.stringify(newProduct));
-
-  
-  localStorage.setItem("productsStep", "completed");
-
-  console.log("✅ Product Added:", newProduct);
-
-  navigate('/payments');
-
-
-  setProduct({
-    name: '',
-    category: '',
-    price: '',
-    discountedPrice: '',
-    description: '',
-    media: null,
-    quantity: '',
-    sku: ''
-  });
-  setVariants([]);
-  setVariantName('');
-  setVariantValues('');
-};
-
   return (
-    
     <Card className="p-4 shadow-sm" style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: '#fff' }}>
       <h3 className="mb-4 text-center fw-bold text-primary">Add New Product</h3>
 
