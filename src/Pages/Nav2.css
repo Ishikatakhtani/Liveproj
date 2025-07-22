@@ -1,0 +1,33 @@
+/* Nav2.css */
+.nav2-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0066ff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav2-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav2-highlight {
+  color: #00c897;
+}
+
+.nav2-menu span {
+  margin-left: 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav2-menu span:hover,
+.nav2-menu .active {
+  color: #ffe66d;
+  text-decoration: underline;
+}
