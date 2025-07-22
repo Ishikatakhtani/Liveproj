@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './Nav2.css';
 
 const Nav2 = () => {
-  const navigate = useNavigate();
+ const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -14,16 +14,16 @@ const Nav2 = () => {
     'Your Store';
 
   return (
-    <header className="nav2-container">
-      <div className="nav2-logo" onClick={() => navigate('/', { state: { storeName } })}>
-        Local<span className="nav2-highlight">Scope</span>
+    <aside id="side">
+      <div id="logo1">
+        Local<span id="biz-color">Scope</span>
       </div>
-      <nav className="nav2-menu">
+      <nav id="menu">
         <span
           className={currentPath === '/home' ? 'active' : ''}
           onClick={() => navigate('/home', { state: { storeName } })}
         >
-          Dashboard
+          Home
         </span>
         <span
           className={currentPath === '/catlog' ? 'active' : ''}
@@ -32,13 +32,32 @@ const Nav2 = () => {
           Catalog
         </span>
         <span
+          className={currentPath === '/add-product' ? 'active' : ''}
+          onClick={() => navigate('/add-product', { state: { storeName } })}
+        >
+          Add Products
+        </span>
+        <span
           className={currentPath === '/orders' ? 'active' : ''}
           onClick={() => navigate('/orders', { state: { storeName } })}
         >
           Orders
         </span>
+        <span
+          className={currentPath === '/analytics' ? 'active' : ''}
+          onClick={() => navigate('/analytics', { state: { storeName } })}
+        >
+          Analytics
+        </span>
+        <span
+          className={currentPath === '/reviews' ? 'active' : ''}
+          onClick={() => navigate('/reviews', { state: { storeName } })}
+        >
+          Reviews
+        </span>
+        <hr />
       </nav>
-    </header>
+    </aside>
   );
 };
 
