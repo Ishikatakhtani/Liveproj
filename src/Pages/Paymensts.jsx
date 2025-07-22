@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import SideNav from './sidenav';
+import Nav2 from './Nav2';
+
 const Payments = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -18,8 +19,7 @@ useEffect(() => {
   return (
     <>
     <div style={{display:"flex"}}>
-<SideNav/>
-   
+<Nav2/>
       <h1>Payments</h1> <br /> <br />
       <span
         onClick={() => {

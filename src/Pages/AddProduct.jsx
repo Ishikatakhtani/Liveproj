@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import SideNav from './sidenav';
+import Nav2 from './Nav2';
+
 import "./Product.css";
 import ProductForm from './ProductForm';
 const AddProduct = () => (
    <div style={{display:"flex"}}>
-   <SideNav/>
+   <Nav2/>
   <Container id='div1'  >
 
  <ProductForm/>
