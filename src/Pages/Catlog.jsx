@@ -31,11 +31,14 @@ function Catlog() {
 
   if (filteredProducts.length === 0) {
     return (
+      <div className='a' style={{display:"flex"}}>
+       <Nav2/>
       <Container className="py-5 text-center">
         <h4 className="text-danger">
           ❌ No products found for "{storeName}".
         </h4>
       </Container>
+      </div>
     );
   }
 
