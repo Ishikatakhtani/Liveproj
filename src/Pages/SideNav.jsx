@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
-const SideNav = () => {
+const sidenav = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
@@ -66,4 +66,4 @@ const SideNav = () => {
   );
 };
 
-export default SideNav;
+export default sidenav;
