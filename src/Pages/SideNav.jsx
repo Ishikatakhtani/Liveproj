@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-//import './SideNav.css';
+
 
 const SideNav = () => {
   const navigate = useNavigate();
