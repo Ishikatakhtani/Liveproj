@@ -1,7 +1,7 @@
 // Nav2.jsx
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import './Nav2.css';
+//import './Nav2.css';
 
 const Nav2 = () => {
   const navigate = useNavigate();
