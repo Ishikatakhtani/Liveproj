@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import SideNav from './sidenav';
 const Payments = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,7 +17,10 @@ useEffect(() => {
   console.log("Payments page received storeName:", storeName); // ✅ Debug
   return (
     <>
-      <h1>Payments</h1>
+    <div style={{display:"flex"}}>
+<SideNav/>
+   
+      <h1>Payments</h1> <br /> <br />
       <span
         onClick={() => {
           console.log("Navigating to catalog with storeName:", storeName);
@@ -27,6 +31,7 @@ useEffect(() => {
       >
         Catalog
       </span>
+       </div>
     </>
   );
 };

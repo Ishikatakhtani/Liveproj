@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, Container, Row, Col, Badge } from 'react-bootstrap';
-
+import SideNav from './sidenav';
 function Catlog() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,7 +38,11 @@ function Catlog() {
     );
   }
 
+
   return (
+    <>
+    <div className='a' style={{display:"flex"}}>
+    <SideNav/>
     <Container className="catalog-container py-5">
       <h2 className="section-title text-center mb-4">
         🛍️ Products for "{storeName}"
@@ -99,6 +103,8 @@ function Catlog() {
         ))}
       </Row>
     </Container>
+</div>
+    </>
   );
 }
 

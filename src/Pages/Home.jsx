@@ -40,7 +40,7 @@ useEffect(() => {
          <span
   onClick={() => {
     console.log("Store being passed:", storeName);
-   navigate('/catalog', { state: { storeName } });
+   navigate('/catlog', { state: { storeName } });
   }}
   
 >
