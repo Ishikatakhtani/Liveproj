@@ -11,8 +11,7 @@ import Home from './Pages/Home';
 import AddProduct from './Pages/AddProduct';
 import Payments from './Pages/Paymensts';
 import Catlog from './Pages/Catlog';
-import SideNav from './Pages/sidenav';
-
+import sidenav from './Pages/sidenav';
 function App() {
   return (
     <Router>
@@ -27,7 +26,7 @@ function App() {
             <Route path="/add-product" element={<AddProduct />} />
   <Route path="/payments" element={<Payments />} />
     <Route path="/catlog" element={<Catlog />} />
-      <Route path="/sidenav" element={<SideNav />} />
+      <Route path="/sidenav" element={<sideNav />} />
         </Route>
       </Routes>
     </Router>
